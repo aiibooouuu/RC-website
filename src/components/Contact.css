@@ -1,0 +1,318 @@
+/* Base Styles */
+.contact-section {
+  padding: 40px 0;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+.contact-container {
+  width: 100%;
+  margin: 0 auto;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .contact-section {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 18px 0;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .contact-container {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100vw;
+    box-sizing: border-box;
+    align-items: stretch;
+  }
+  .contact-info,
+  .location-section {
+    width: 96vw !important;
+    min-width: 0 !important;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 12px 8px;
+    border-radius: 10px;
+  }
+  .map-container {
+    width: 100%;
+    min-width: 0;
+    margin: 0 auto 18px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 180px;
+  }
+  .map-container iframe {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 180px !important;
+    border-radius: 10px;
+  }
+}
+
+/* Rotary Info */
+.rotary-info {
+  margin: 0 0 18px 0;
+  padding: 0;
+  border: none;
+  text-align: left;
+}
+.rotary-title {
+  color: #BF9D36;
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+.rotary-details {
+  color: #b0c4de;
+  font-size: 14px;
+}
+
+/* WhatsApp Section */
+.whatsapp-section h4,
+.social-section h4 {
+  font-weight: bold;
+  font-size: 22px;
+  color: #ffffff;
+  margin-bottom: 16px;
+  margin-top: 10px;
+}
+.whatsapp-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.whatsapp-buttons button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #011526;
+  border: 1px solid #BF9D36;
+  border-radius: 8px;
+  padding: 16px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.whatsapp-buttons button:hover {
+  background-color: #02203A;
+}
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #02203A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+.icon {
+  color: #BF9D36;
+  width: 20px;
+  height: 20px;
+}
+.button-text p {
+  font-size: 0.875rem;
+  color: #D1D5DB;
+}
+.whatsapp-buttons button span {
+  color: #BF9D36;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease;
+}
+.whatsapp-buttons button:hover span {
+  transform: scale(1.05);
+}
+
+/* Social Section */
+.social-section h4 {
+  margin-top: 32px;
+}
+.social-icons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.social-icons a:hover {
+  background-color: #02203A;
+  transform: scale(1.1);
+}
+.social-icons .icon {
+  color: #BFB965;
+  transition: color 0.3s;
+}
+.social-icons a:hover .icon {
+  color: #BF9D36;
+}
+
+/* Location Section */
+.location-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.location-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+.location-info address {
+  font-style: normal;
+  color: #D1D5DB;
+  line-height: 1.6;
+}
+.map-container {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  height: 256px;
+  margin-bottom: 32px;
+  margin-right: 32px;
+}
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Footer creators bar at the very bottom, full width, center aligned */
+.contact-creators-bar {
+  width: 100vw;
+  background: #d7b74da6;
+  color: #011526;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.08rem;
+  letter-spacing: 0.06em;
+  padding: 0.9rem 0 0.7rem 0;
+  margin: 0 calc(-1 * (100vw - 100%) / 2);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  border-top: 3px solid #d7b64d;
+  border-bottom: 3px solid #d7b64d;
+}
+
+/* Reserved text */
+.reserved {
+  color: #ffffff;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+/* Responsive: Mobile Styles */
+@media (max-width: 900px) {
+  .contact-section {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 18px 0;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .contact-container {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+  }
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100vw;
+    box-sizing: border-box;
+    align-items: stretch;
+  }
+  .contact-info,
+  .location-section {
+    width: 96vw !important;
+    min-width: 0 !important;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 12px 8px;
+    border-radius: 10px;
+  }
+  .map-container {
+    width: 100%;
+    min-width: 0;
+    margin: 0 25px 18px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 180px;
+  }
+  .map-container iframe {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 180px !important;
+    border-radius: 10px;
+  }
+  .rotary-info {
+    margin: 0 0 18px 0;
+    padding: 0;
+    border: none;
+    text-align: left;
+  }
+  .rotary-title, .rotary-details {
+    font-size: 1rem;
+    color: #BF9D36;
+    margin-bottom: 2px;
+  }
+  .reserved {
+    font-size: 0.95rem;
+    color: #888;
+    margin: 10px 0 0 0;
+  }
+  .whatsapp-section h4,
+  .social-section h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .whatsapp-buttons button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  .social-icons {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .social-icons a {
+    width: 36px;
+    height: 36px;
+  }
+  .contact-creators-bar {
+    font-size: 0.98rem;
+    padding: 0.7rem 0 0.6rem 0;
+  }
+}
