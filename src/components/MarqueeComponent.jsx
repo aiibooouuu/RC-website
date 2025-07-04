@@ -52,26 +52,46 @@ const MarqueeComponent = () => {
         Our Collaborators
       </h2>
       {/* Top Row: 12 images, slower, left to right */}
-      <Marquee speed={30} gradient={false} loop={0} direction="left">
+      <Marquee speed={80} gradient={false} loop={0} direction="left">
         {[...top, ...top].map((src, idx) => (
-          <img
+          <div
             key={`row1-${idx}`}
-            src={src}
-            alt={`Top ${idx % top.length + 1}`}
-            style={{ margin: '0 20px', height: '150px', backgroundColor: '#fff' }}
-          />
+            style={{
+              display: 'inline-block',
+              margin: '0 20px',
+              background: 'rgba(255, 255, 255, 0.27)',
+              padding: '10px',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
+            }}
+          >
+            <img
+              src={src}
+              alt={`Top ${idx % top.length + 1}`}
+              style={{ height: '150px', display: 'block' }}
+            />
+          </div>
         ))}
       </Marquee>
       <br />
       {/* Bottom Row: 14 images, faster, right to left */}
       <Marquee speed={80} gradient={false} loop={0} direction="right">
         {[...bottom, ...bottom].map((src, idx) => (
-          <img
+          <div
             key={`row2-${idx}`}
-            src={src}
-            alt={`Bot ${idx % bottom.length + 1}`}
-            style={{ margin: '0 18px', height: '110px', backgroundColor: '#fff'}}
-          />
+            style={{
+              display: 'inline-block',
+              margin: '0 18px',
+              background: 'rgba(255,255,255,0.27)',
+              padding: '8px',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.07)',
+            }}
+          >
+            <img
+              src={src}
+              alt={`Bot ${idx % bottom.length + 1}`}
+              style={{ height: '110px', display: 'block' }}
+            />
+          </div>
         ))}
       </Marquee>
     </div>

@@ -46,14 +46,7 @@ return (
 );
 };
 
-const marqueeImages = [
-"/logo.png",
-"/logo.png",
-"/logo.png",
-"/logo.png",
-"/logo.png",
-"/logo.png",
-];
+
 
 const verticalMarqueeImages = [
 "/rect1.jpg",

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import "./Team.css";
 
@@ -36,6 +36,14 @@ const socials = [
 
 const Team = () => {
   const [hovered, setHovered] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 900);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <section id="team">
@@ -130,6 +138,89 @@ const Team = () => {
             )}
           </div>
         ))}
+      </div>
+      {/* Placeholder Title Section */}
+      <h2 className="team-subheading" style={{ marginTop: "3rem" }}>
+        SPECIAL MENTIONS
+      </h2>
+      <div className="special-mentions-row">
+        <div
+          className="team-card team-card-minimal special-mention-card"
+          onMouseEnter={() => setHovered('special-steve')}
+          onMouseLeave={() => setHovered(null)}
+        >
+          <div className="team-name" style={{ textAlign: "center" }}>Steve Anthony</div>
+          <img
+            src={isMobile ? "/steve.png" : "/logo.png"}
+            alt="Steve Anthony"
+            className="team-logo-large"
+          />
+          <div className="team-bottom" style={{ textAlign: "center" }}>
+            <div className="team-role">Immediate Past President</div>
+            <div className="team-socials" style={{ justifyContent: "center" }}>
+              {socials.map((s, i) => (
+                <a
+                  key={i}
+                  href={s.link}
+                  className="team-social"
+                  title={s.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+          {!isMobile && hovered === 'special-steve' && (
+            <div className="team-card-img-topright">
+              <img
+                src="/steve.png"
+                alt="Steve Anthony"
+                className="team-img-popup"
+              />
+            </div>
+          )}
+        </div>
+        <div className="special-mentions-divider" />
+        <div
+          className="team-card team-card-minimal special-mention-card"
+          onMouseEnter={() => setHovered('special-sangeeta')}
+          onMouseLeave={() => setHovered(null)}
+        >
+          <div className="team-name" style={{ textAlign: "center" }}>Sangeeta</div>
+          <img
+            src={isMobile ? "/TI.png" : "/logo.png"}
+            alt="Sangeeta"
+            className="team-logo-large"
+          />
+          <div className="team-bottom" style={{ textAlign: "center" }}>
+            <div className="team-role">Teacher Incharge</div>
+            <div className="team-socials" style={{ justifyContent: "center" }}>
+              {socials.map((s, i) => (
+                <a
+                  key={i}
+                  href={s.link}
+                  className="team-social"
+                  title={s.name}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
+          </div>
+          {!isMobile && hovered === 'special-sangeeta' && (
+            <div className="team-card-img-topright">
+              <img
+                src="/TI.png"
+                alt="Sangeeta"
+                className="team-img-popup"
+              />
+            </div>
+          )}
+        </div>
       </div>
     </div>
     </section>
